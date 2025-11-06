@@ -21,7 +21,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 import os
 
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == '1'
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '*').split(',')
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', os.getenv('RENDER_EXTERNAL_HOSTNAME', 'localhost')).split(',')
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,9 +31,9 @@ ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '*').split(',')
 SECRET_KEY = 'django-insecure-$83b@1k)-f-sz7uwzy9w!em*@gl480!##_jiir9ckk$u(rv5po'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
 
 
 # Application definition
