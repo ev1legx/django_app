@@ -1,0 +1,61 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+          {% translate "Base Title" %}
+        {% endblock %}
+    </title>
+    <style>
+      /* Стили для позиционирования кнопки в правом верхнем углу */
+      .logout-button-container {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+      }
+      .logout-button-container form button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        color: #007bff;
+        text-decoration: underline;
+        font-size: 1rem;
+      }
+      .logout-button-container form button:hover {
+        color: #0056b3;
+      }
+    </style>
+</head>
+<body>
+
+{% block body %}
+  {% translate "Base body" %}
+{% endblock %}
+
+{% if user.is_authenticated %}
+  <div class="logout-button-container">
+    <form action="{% url 'logout' %}" method="post">
+      {% csrf_token %}
+      <button type="submit">{% translate "Logout" %}</button>
+    </form>
+  </div>
+{% else %}
+  <a href="{% url 'login' %}">{% translate "Login" %}</a>
+{% endif %}
+
+<div>
+    {% now 'H:i' %}
+</div>
+<div>
+    {% now 'l' as current_weekday %}
+    {% blocktranslate with day=current_weekday %}
+    Today is {{ day }}
+    {% endblocktranslate %}
+</div>
+</body>
+</html>

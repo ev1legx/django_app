@@ -1,0 +1,23 @@
+{% extends 'shopapp/base.html' %}
+{% load i18n %}
+
+{% block title %}{% translate "Product Details" %}{% endblock %}
+
+{% block body %}
+<h1>{% translate "Product Details" %}</h1>
+
+<p><strong>{% translate "Name:" %}</strong> {{ product.name }}</p>
+
+{% blocktranslate %}
+Description:
+{{ product.description }}
+{% endblocktranslate %}
+
+<p><strong>{% translate "Price:" %}</strong> {{ product.price }}</p>
+<p><strong>{% translate "Quantity:" %}</strong> {{ product.quantity }}</p>
+<p><strong>{% translate "Available:" %}</strong> {{ product.is_available|yesno:_("Yes,No") }}</p>
+<p><strong>{% translate "Created by:" %}</strong> {{ product.created_by }}</p>
+<p><strong>{% translate "Created at:" %}</strong> {{ product.created_at }}</p>
+
+<a href="{% url 'product_list' %}">{% translate "Back to Products List" %}</a>
+{% endblock %}

@@ -1,0 +1,271 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-08 10:28+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: shopapp/models.py:43
+msgid "Product"
+msgstr "Товар"
+
+#: shopapp/models.py:44 shopapp/templates/shopapp/order_detail.html:14
+#: shopapp/templates/shopapp/orders_list.html:15
+#: shopapp/templates/shopapp/products_list.html:7
+msgid "Products"
+msgstr "Товары"
+
+#: shopapp/models.py:57
+msgid "Order"
+msgstr "Заказ"
+
+#: shopapp/models.py:58 shopapp/templates/shopapp/orders_list.html:7
+msgid "Orders"
+msgstr "Заказы"
+
+#: shopapp/templates/shopapp/base.html:9
+msgid "Base Title"
+msgstr "Базовый Заголовок"
+
+#: shopapp/templates/shopapp/base.html:37
+msgid "Base body"
+msgstr "Основное тело страницы"
+
+#: shopapp/templates/shopapp/base.html:44
+msgid "Logout"
+msgstr "Выйти"
+
+#: shopapp/templates/shopapp/base.html:48
+msgid "Login"
+msgstr "Войти"
+
+#: shopapp/templates/shopapp/base.html:56
+#, python-format
+msgid ""
+"\n"
+"    Today is %(day)s\n"
+"    "
+msgstr ""
+"\n"
+"    Сегодня %(day)s\n"
+"    "
+
+#: shopapp/templates/shopapp/order_detail.html:4
+#: shopapp/templates/shopapp/order_detail.html:7
+#, fuzzy
+#| msgid "Product Details"
+msgid "Order Detail"
+msgstr "Детали товара"
+
+#: shopapp/templates/shopapp/order_detail.html:8
+msgid "Contact Name:"
+msgstr ""
+
+#: shopapp/templates/shopapp/order_detail.html:9
+msgid "Address:"
+msgstr ""
+
+#: shopapp/templates/shopapp/order_detail.html:10
+msgid "User:"
+msgstr ""
+
+#: shopapp/templates/shopapp/order_detail.html:11
+msgid "Status:"
+msgstr ""
+
+#: shopapp/templates/shopapp/order_detail.html:12
+#: shopapp/templates/shopapp/product_detail.html:20
+msgid "Created at:"
+msgstr "Дата создания:"
+
+#: shopapp/templates/shopapp/order_detail.html:19
+msgid "No products in this order."
+msgstr ""
+
+#: shopapp/templates/shopapp/order_detail.html:23
+#, fuzzy
+#| msgid "Back to Products List"
+msgid "Back to orders list"
+msgstr "Вернуться к списку товаров"
+
+#: shopapp/templates/shopapp/orders_list.html:4
+#, fuzzy
+#| msgid "Orders"
+msgid "Orders List"
+msgstr "Заказы"
+
+#: shopapp/templates/shopapp/orders_list.html:12
+msgid "Contact Name"
+msgstr ""
+
+#: shopapp/templates/shopapp/orders_list.html:13
+msgid "Address"
+msgstr ""
+
+#: shopapp/templates/shopapp/orders_list.html:14
+msgid "User"
+msgstr ""
+
+#: shopapp/templates/shopapp/orders_list.html:16
+#: shopapp/templates/shopapp/products_list.html:17
+#, fuzzy
+#| msgid "Created at:"
+msgid "Created at"
+msgstr "Дата создания:"
+
+#: shopapp/templates/shopapp/orders_list.html:30
+#, fuzzy
+#| msgid "Products"
+msgid "No products"
+msgstr "Товары"
+
+#: shopapp/templates/shopapp/orders_list.html:40
+msgid "No orders found."
+msgstr ""
+
+#: shopapp/templates/shopapp/product_detail.html:4
+#: shopapp/templates/shopapp/product_detail.html:7
+msgid "Product Details"
+msgstr "Детали товара"
+
+#: shopapp/templates/shopapp/product_detail.html:9
+msgid "Name:"
+msgstr "Название:"
+
+#: shopapp/templates/shopapp/product_detail.html:11
+#, python-format
+msgid ""
+"\n"
+"Description:\n"
+"%(product.description)s\n"
+msgstr ""
+"\n"
+"Описание:\n"
+"%(product.description)s\n"
+
+#: shopapp/templates/shopapp/product_detail.html:16
+msgid "Price:"
+msgstr "Цена:"
+
+#: shopapp/templates/shopapp/product_detail.html:17
+msgid "Quantity:"
+msgstr "Количество:"
+
+#: shopapp/templates/shopapp/product_detail.html:18
+msgid "Available:"
+msgstr "В наличии:"
+
+#: shopapp/templates/shopapp/product_detail.html:18
+#: shopapp/templates/shopapp/products_list.html:27
+msgid "Yes,No"
+msgstr "Да,Нет"
+
+#: shopapp/templates/shopapp/product_detail.html:19
+msgid "Created by:"
+msgstr "Создан пользователем:"
+
+#: shopapp/templates/shopapp/product_detail.html:22
+msgid "Back to Products List"
+msgstr "Вернуться к списку товаров"
+
+#: shopapp/templates/shopapp/product_form.html:4
+#: shopapp/templates/shopapp/product_form.html:7
+#, fuzzy
+#| msgid "Created at:"
+msgid "Create product"
+msgstr "Дата создания:"
+
+#: shopapp/templates/shopapp/product_form.html:11
+#, fuzzy
+#| msgid "Created by:"
+msgid "Create"
+msgstr "Создан пользователем:"
+
+#: shopapp/templates/shopapp/products_list.html:4
+#, fuzzy
+#| msgid "Back to Products List"
+msgid "Products List"
+msgstr "Вернуться к списку товаров"
+
+#: shopapp/templates/shopapp/products_list.html:12
+#, fuzzy
+#| msgid "Name:"
+msgid "Name"
+msgstr "Название:"
+
+#: shopapp/templates/shopapp/products_list.html:13
+msgid "Description"
+msgstr ""
+
+#: shopapp/templates/shopapp/products_list.html:14
+#, fuzzy
+#| msgid "Price:"
+msgid "Price"
+msgstr "Цена:"
+
+#: shopapp/templates/shopapp/products_list.html:15
+#, fuzzy
+#| msgid "Quantity:"
+msgid "Quantity"
+msgstr "Количество:"
+
+#: shopapp/templates/shopapp/products_list.html:16
+#, fuzzy
+#| msgid "Available:"
+msgid "Available"
+msgstr "В наличии:"
+
+#: shopapp/templates/shopapp/products_list.html:34
+#, fuzzy
+#| msgid "No products available"
+msgid "No products available."
+msgstr "Нет доступных товаров"
+
+#: shopapp/templates/shopapp/shop-index.html:4
+msgid "Shop Index"
+msgstr "Главная магазина"
+
+#: shopapp/templates/shopapp/shop-index.html:7
+msgid "Welcome to Shop Index!"
+msgstr "Добро пожаловать в магазин"
+
+#: shopapp/templates/shopapp/shop-index.html:14
+msgid "length"
+msgstr "длина"
+
+#: shopapp/templates/shopapp/shop-index.html:14
+msgid "for"
+msgstr "за"
+
+#: shopapp/templates/shopapp/shop-index.html:14
+msgid "Capitalized"
+msgstr "С заглавной буквы"
+
+#: shopapp/templates/shopapp/shop-index.html:16
+#, fuzzy
+msgid "Lucky product"
+msgstr "Удачный товар"
+
+#: shopapp/templates/shopapp/shop-index.html:22
+msgid "No products available"
+msgstr "Нет доступных товаров"
+
+#: shopapp/templates/shopapp/shop-index.html:35
+#, python-format
+msgid "Time running (seconds since an arbitrary point): %(time_running)s"
+msgstr "Прошло времени (секунд с произвольной точки): %(time_running)s"

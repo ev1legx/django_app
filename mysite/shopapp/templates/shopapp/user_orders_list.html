@@ -1,0 +1,47 @@
+{% extends 'shopapp/base.html' %}
+{% load i18n %}
+{% load cache %}
+
+{% block title %}{% translate "User Orders" %}{% endblock %}
+
+{% block body %}
+<h1>
+  {% translate "User" %} {{ owner.username }}
+  {% translate "placed the following orders" %}
+</h1>
+
+{% if orders.exists %}
+  {% cache 600 "user_orders_"|add:owner.pk %}
+  <table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+      <tr>
+        <th>{% translate "Order ID" %}</th>
+        <th>{% translate "Status" %}</th>
+        <th>{% translate "Ordered At" %}</th>
+        <th>{% translate "Products" %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+      <tr>
+        <td>{{ order.pk }}</td>
+        <td>{{ order.status }}</td>
+        <td>{{ order.ordered_at }}</td>
+        <td>
+          <ul>
+            {% for product in order.products.all %}
+              <li>{{ product.name }}</li>
+            {% empty %}
+              <li>{% translate "No products" %}</li>
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endcache %}
+{% else %}
+  <p>{% translate "The user has no orders yet." %}</p>
+{% endif %}
+{% endblock %}

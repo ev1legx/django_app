@@ -1,0 +1,13 @@
+{% extends 'shopapp/base.html' %}
+
+{% block body %}
+
+<h1>Редактирование профиля</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+
+{% endblock %}

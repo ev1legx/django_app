@@ -1,0 +1,16 @@
+{% extends 'shopapp/base.html' %}
+
+{% block body %}
+
+<h1>Мой профиль</h1>
+{% if profile.avatar %}
+    <img src="{{ profile.avatar.url }}" alt="Аватар" style="max-width: 200px; max-height: 200px;">
+{% else %}
+    <p>Аватарка отсутствует.</p>
+{% endif %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+{% endblock %}

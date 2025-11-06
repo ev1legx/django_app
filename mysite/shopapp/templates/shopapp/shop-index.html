@@ -1,0 +1,41 @@
+{% extends 'shopapp/base.html' %}
+{% load i18n %}
+
+{% block title %}{% translate "Shop Index" %}{% endblock %}
+
+{% block body %}
+<h1>{% translate "Welcome to Shop Index!" %}</h1>
+
+<div>
+  {% if products %}
+    <ul>
+      {% for product in products %}
+        <li>
+          {{ product.name|lower }} ({% translate "length" %}: {{ product.name|length }}) {% translate "for" %} ${{ product.price|default:"N/A" }} - {% translate "Capitalized" %}: {{ product.name|capfirst }}
+          {% if product.name|length == 7 %}
+            <span>{% translate "Lucky product" %}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>{% translate "No products available" %}</p>
+  {% endif %}
+</div>
+
+<div>
+  {% include 'shopapp/products_list.html' %}
+</div>
+
+<div>
+  {% include 'shopapp/orders_list.html' %}
+</div>
+
+<div>
+  <small>{% blocktranslate %}Time running (seconds since an arbitrary point): {{ time_running }}{% endblocktranslate %}</small>
+</div>
+
+<div>
+  {% lorem 3 p random %}
+</div>
+{% endblock %}

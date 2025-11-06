@@ -1,0 +1,56 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$JEtQKrdQyPPmVNngWSdvYH$IGb4W+g4JH/6jQH9oGytqzNsGFIOBNk2e7hf0xcKLsk=",
+    "last_login": "2025-09-24T08:59:52.377Z",
+    "is_superuser": true,
+    "username": "evil",
+    "first_name": "",
+    "last_name": "",
+    "email": "modya1997@mail.ru",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-09-13T12:08:34.040Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$BS800huud9qto78YAfb1IT$Y0ehAlaNSyeVah8mAxyGKn3tOgWKakRW/7zj138IbwE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "dindon1337",
+    "first_name": "",
+    "last_name": "",
+    "email": "dindonik1337@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-24T09:39:07.652Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$vqQiOZQXelh6doiaAUy013$IlGqq8Xc8nEPisHogQxPNa/eZN7xOkVku5OMGyXiYDg=",
+    "last_login": "2025-09-24T10:05:37.076Z",
+    "is_superuser": false,
+    "username": "qwerty1337",
+    "first_name": "",
+    "last_name": "",
+    "email": "dindonik1337@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-24T09:41:05.965Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

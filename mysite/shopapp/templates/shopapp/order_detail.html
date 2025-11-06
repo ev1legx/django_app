@@ -1,0 +1,24 @@
+{% extends 'shopapp/base.html' %}
+{% load i18n %}
+
+{% block title %}{% translate "Order Detail" %}{% endblock %}
+
+{% block body %}
+<h1>{% translate "Order Detail" %}</h1>
+<p><strong>{% translate "Contact Name:" %}</strong> {{ order.contact_name }}</p>
+<p><strong>{% translate "Address:" %}</strong> {{ order.address }}</p>
+<p><strong>{% translate "User:" %}</strong> {{ order.user.username }}</p>
+<p><strong>{% translate "Status:" %}</strong> {{ order.status }}</p>
+<p><strong>{% translate "Created at:" %}</strong> {{ order.created_at }}</p>
+
+<h2>{% translate "Products" %}</h2>
+<ul>
+  {% for product in order.products.all %}
+    <li>{{ product.name }}</li>
+  {% empty %}
+    <li>{% translate "No products in this order." %}</li>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'orders_list' %}">{% translate "Back to orders list" %}</a>
+{% endblock %}

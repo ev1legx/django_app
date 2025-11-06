@@ -1,0 +1,10 @@
+{% extends 'shopapp/base.html' %}
+
+{% block title %}
+    Файл загружен
+{% endblock %}
+
+{% block body %}
+<h2>Файл успешно загружен!</h2>
+<a href="{% url 'upload_file' %}">Загрузить еще один файл</a>
+{% endblock %}

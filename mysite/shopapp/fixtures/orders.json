@@ -1,0 +1,28 @@
+[
+  {
+    "model": "shopapp.order",
+    "pk": 1,
+    "fields": {
+      "delivery_address": "ул. Тестовая, 1",
+      "promocode": "TEST123",
+      "comment": "Первый заказ",
+      "status": "new",
+      "ordered_at": "2025-09-30T20:00:00Z",
+      "user": 1,
+      "products": [1, 2]
+    }
+  },
+  {
+    "model": "shopapp.order",
+    "pk": 2,
+    "fields": {
+      "delivery_address": "ул. Примерная, 42",
+      "promocode": "PROMO2025",
+      "comment": "Второй заказ",
+      "status": "completed",
+      "ordered_at": "2025-09-25T15:00:00Z",
+      "user": 1,
+      "products": [2]
+    }
+  }
+]

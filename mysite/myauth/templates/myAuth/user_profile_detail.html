@@ -1,0 +1,19 @@
+{% extends 'shopapp/base.html' %}
+
+{% block body %}
+
+<h1>Профиль пользователя {{ object.user.username }}</h1>
+
+{% if object.avatar %}
+  <img src="{{ object.avatar.url }}" alt="Аватар" style="max-width: 200px; max-height: 200px;">
+{% else %}
+  <p>Аватарка отсутствует.</p>
+{% endif %}
+
+<p>Bio: {{ object.bio }}</p>
+
+{% if can_edit %}
+  <a href="{% url 'edit_user_profile' object.user.id %}">Редактировать профиль</a>
+{% endif %}
+
+{% endblock %}

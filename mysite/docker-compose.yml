@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  django:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=mysite.settings
+      - DJANGO_DEBUG=1
+      - DJANGO_ALLOWED_HOSTS=*
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: django
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    restart: always
+
+volumes:
+  postgres_data:

@@ -1,0 +1,13 @@
+{% extends 'shopapp/base.html' %}
+{% load i18n %}
+
+{% block title %}{% translate "Create product" %}{% endblock %}
+
+{% block body %}
+  <h2>{% translate "Create product" %}</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{% translate "Create" %}</button>
+  </form>
+{% endblock %}

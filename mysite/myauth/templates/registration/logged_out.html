@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Выход из системы</title>
+    <style>
+      /* ваш CSS стили (как было) */
+    </style>
+</head>
+<body>
+    <div class="logout-container">
+        <h2>Выход из системы</h2>
+        <form action="{% url 'logout' %}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" style="background:none; border:none; padding:0; cursor:pointer; color:#007bff; text-decoration:underline;">Выйти</button>
+        </form>
+        <div class="footer-text">&copy; 2025 Ваш сайт</div>
+    </div>
+</body>
+</html>

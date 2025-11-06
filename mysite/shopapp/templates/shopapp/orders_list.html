@@ -1,0 +1,42 @@
+{% extends 'shopapp/base.html' %}
+{% load i18n %}
+
+{% block title %}{% translate "Orders List" %}{% endblock %}
+
+{% block body %}
+<h1>{% translate "Orders" %}</h1>
+{% if orders %}
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+      <tr>
+         <th>{% translate "Contact Name" %}</th>
+         <th>{% translate "Address" %}</th>
+         <th>{% translate "User" %}</th>
+         <th>{% translate "Products" %}</th>
+         <th>{% translate "Created at" %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+        <tr>
+          <td>{{ order.contact_name }}</td>
+          <td>{{ order.address }}</td>
+          <td>{{ order.user.username }}</td>
+          <td>
+            <ul>
+              {% for product in order.products.all %}
+                <li>{{ product.name }}</li>
+              {% empty %}
+                <li>{% translate "No products" %}</li>
+              {% endfor %}
+            </ul>
+          </td>
+          <td>{{ order.created_at }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>{% translate "No orders found." %}</p>
+{% endif %}
+{% endblock %}
