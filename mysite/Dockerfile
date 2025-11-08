@@ -15,6 +15,11 @@ RUN poetry config virtualenvs.create false \
 # Копируем весь исходный код проекта (предполагается, что проект в этой же папке)
 COPY . /app/
 
+# Копируем и даем права на запуск entrypoint.sh
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
+
 EXPOSE 8000
 
 # Запуск Gunicorn с указанием wsgi-модуля
