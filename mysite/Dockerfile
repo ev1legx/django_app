@@ -5,22 +5,25 @@ WORKDIR /app
 # Установка Poetry
 RUN pip install --no-cache-dir poetry
 
-# Копируем pyproject.toml и poetry.lock в рабочую папку
+# Копируем pyproject.toml и poetry.lock для кеширования зависимостей
 COPY pyproject.toml poetry.lock* /app/
 
-# Конфигурируем Poetry не создавать виртуальное окружение и устанавливаем зависимости (без установки текущего пакета)
+# Устанавливаем зависимости без создания виртуального окружения
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi --no-root
 
-# Копируем весь исходный код проекта (предполагается, что проект в этой же папке)
+# Копируем весь код проекта
 COPY . /app/
 
-# Копируем и даем права на запуск entrypoint.sh
+# Копируем entrypoint.sh и даем права на запуск
 COPY entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 
-
+# Открываем порт 8000
 EXPOSE 8000
 
-# Запуск Gunicorn с указанием wsgi-модуля
+# Используем entrypoint.sh как точку входа
+ENTRYPOINT ["/app/entrypoint.sh"]
+
+# Команда запуска gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "mysite.wsgi:application"]
